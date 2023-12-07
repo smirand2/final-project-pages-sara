@@ -1,0 +1,45 @@
+body {
+    background-color: #134A8B; /* Navy blue background */
+    color: white; /* White text for other lettering */
+}
+h2 {
+    color: #E8D52B; /* Yellow color for 'Protocol 54' */
+    font-weight: bolder; /* Bold text for 'Protocol 54' */
+}
+.btn-primary {
+    background-color: lightgrey; /* Grey background for buttons */
+    border-color: black; /* Black border for buttons */
+    color: black; /* Black text for buttons */
+}
+.btn-primary:hover {
+    background-color: darkgrey; /* Dark grey background on hover */
+    border-color: darkgrey; /* Dark grey border on hover */
+}
+.container {
+    max-width: 750px;
+    margin: 50 auto;
+    padding-top: 80px;
+}
+.form-control {
+    max-width: 100%;
+}
+.form-text {
+    color: white; /* White text for password instructions */
+}
+.signup-link {
+    color: whitesmoke; /* Whitesmoke color for links */
+}
+.signup-link:hover {
+    color: white; /* White color on hover for links */
+}
+.progress-step {
+    display: inline-block;
+    margin-right: 20px;
+}
+.active-step {
+    font-weight: bolder;
+    
+}
+.hidden {
+    display: none;
+}

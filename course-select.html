@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Course Select - Protocol 54</title>
+    
+</head>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">Course Select </h2>
+
+        <div class="text-center mb-4">
+            <span class="progress-step active-step">Course Select</span>
+            <span class="progress-step">Date/Time</span>
+            <span class="progress-step">Location</span>
+            <span class="progress-step">Additional Information</span>
+            <span class="progress-step">Payment</span>
+            <span class="progress-step">Confirmation</span>
+        </div>
+
+
+        <!-- Course Selection Form -->
+        <form action="date-time.html" method="post">
+            <!-- Existing Courses Dropdown -->
+            <div class="mb-3">
+                <label for="courseDropdown" class="form-label">Dropdown Menu</label>
+                <select class="form-select" id="courseDropdown" name="selectedCourse" onchange="toggleCourseRequest(this)">
+                    <option value="">Select or Request a Course</option>
+                    <option value="course1">Cybersecurity</option>
+                    <option value="course2">Artificial Intelligence</option>
+                    <option value="course3">Intro to Python Programming</option>
+                    <option value="new">Request a New Course</option>
+                </select>
+            </div>
+
+            <!-- New Course Request Fields -->
+            <div id="newCourseFields" class="hidden">
+                <!-- New Course Description -->
+                <div class="mb-3">
+                    <label for="courseDescription" class="form-label">Course Description</label>
+                    <textarea class="form-control" id="courseDescription" rows="3" placeholder="Describe the course you want..."></textarea>
+                </div>
+
+                <!-- Target Audience -->
+                <div class="mb-3">
+                    <label for="targetAudience" class="form-label">Target Audience</label>
+                    <input type="text" class="form-control" id="targetAudience" placeholder="Who is this course for?">
+                </div>
+
+                <!-- Go Back Button -->
+                <div class="mb-3 text-center">
+                    <button type="button" class="btn btn-secondary" onclick="resetCourseSelection()">Go Back</button>
+                </div>
+            </div>
+
+            <!-- Continue Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Continue</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and custom script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleCourseRequest(select) {
+            var newCourseFields = document.getElementById('newCourseFields');
+            if (select.value === 'new') {
+                newCourseFields.classList.remove('hidden');
+            } else {
+                newCourseFields.classList.add('hidden');
+            }
+        }
+
+        function resetCourseSelection() {
+            var newCourseFields = document.getElementById('newCourseFields');
+            var courseDropdown = document.getElementById('courseDropdown');
+            courseDropdown.value = ''; // Reset dropdown to the default option
+            newCourseFields.classList.add('hidden'); // Hide the additional fields
+        }
+    </script>
+</body>
+</html>
